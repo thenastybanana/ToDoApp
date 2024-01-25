@@ -1,0 +1,17 @@
+.ToDoItem{
+    padding:10px
+}
+
+
+.ToDoButton{
+    padding: 10px;
+    text-align: left;
+    color: red;
+}
+
+#submitData{
+background-color: orange;
+padding: 25px;
+margin: 10px;
+border: solid 1px white;
+}
