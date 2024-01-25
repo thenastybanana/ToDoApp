@@ -3,7 +3,7 @@ countEl = document.getElementById("count-el")
 // let newCount = 0;
 // var spans = document.getElementsByTagName("span");
 
-
+// fhrt
 
 // function deleteItem(button){
 //     var listItem = button.parentNode
