@@ -32,20 +32,20 @@ var newCount = 0; // Ensure newCount is initialized outside the click event hand
 
 
 
-document.getElementById('submitBtn').onclick = function(){
-  
-for(let i = 0; i < nameVar.value; i++){
-    if(i !== 0){
+document.getElementById('inputForm').onsubmit = function(e){
+    e.preventDefault();
+
+    if(nameVar.value.trim().length !== 0){
             newCount += 1; // Increment newCount
             countEl.innerHTML = newCount
-        
-        
+
+
             // Create a new li element and button element
             var newLi = document.createElement('li');
             newLi.id = newCount;
             newLi.className = "ToDoItem"
             newLi.innerHTML = nameVar.value;
-        
+
             var deleteButton = document.createElement('button');
             deleteButton.type = 'button';
             deleteButton.id = newCount;
@@ -55,33 +55,31 @@ for(let i = 0; i < nameVar.value; i++){
             deleteButton.onclick = function() {
                 deleteItem(this);
             };
-        
+
             // Append the li and button to the ul
             document.getElementById('submitData').appendChild(newLi)
         // document.getElementsById(newLi).appendChild(deleteButton)
         // document.getElementById('submitData')
-            
+
             .appendChild(deleteButton);
-        
+
             // Clear the input value
             nameVar.value = '';
         }
     }
 
-} 
-
 
 function deleteItem(button) {
     // Get the parent <li> element of the button
 
-    
+
     var listItem = document.getElementById(button.id);
 
     // Remove the <li> element directly
     listItem.remove();
 }
 
-//disables enter button 
+//disables enter button
 window.addEventListener('keydown',function(e) {
     if (e.keyIdentifier=='U+000A' || e.keyIdentifier=='Enter' || e.keyCode==13) {
         if (e.target.nodeName=='INPUT' && e.target.type=='text') {
